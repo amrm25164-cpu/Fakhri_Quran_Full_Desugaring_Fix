@@ -1,0 +1,13 @@
+إصلاح خطأ Android AAR metadata في Fakhri Quran
+
+السبب: flutter_local_notifications يحتاج تفعيل core library desugaring.
+تم تعديل android/app/build.gradle لتفعيل coreLibraryDesugaringEnabled وإضافة:
+com.android.tools:desugar_jdk_libs:2.1.4
+كما تم تحديث Kotlin Gradle Plugin إلى 2.2.20 ليتوافق مع Flutter 3.47.2.
+
+طريقة الاستخدام:
+1) فك الضغط عن المشروع كاملاً.
+2) ارفع الملفات إلى مستودع GitHub مع استبدال الملفات الموجودة.
+3) شغّل GitHub Actions لبناء APK.
+
+لم يتم التحقق من نجاح البناء على runner في هذه البيئة؛ إذا ظهر خطأ جديد أرسل السجل من أول سطر FAILURE.
